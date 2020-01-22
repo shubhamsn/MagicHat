@@ -1,0 +1,113 @@
+Magic Hat 
+
+1. set initLevel = 1
+	set ColorCount array based on level
+
+2. set initLevel = 1
+	set ColorCount of single color based on level
+
+3. attach timer script with gameController
+	set time 
+
+4. remove catchingBallCollision.cs with hatController
+	attach hatColorChanger.cs with hatController 
+   <<Risk>> ballCount 
+
+5. Change single hat prefab to multihat prefab
+
+6. same as 5
+
+7. add obstacle prefab to game (attach rotationObs.cs to it)
+	rotationFlag  =50f
+	direction = -1
+
+8. add magicStick to game 
+
+9. Attach ArrangeBall.cs with GameController
+	set canRandom true if random fall 
+	else canRanom false
+     Remove BallPooling.cs from GameController
+
+10. 
+
+11. attach BallPooling.cs
+
+12. set ball bouncy level = 0.75 of bowlingBall physics material
+//Todo : change from gameController or levelmanager script
+
+13. 
+
+14. add blower prefab to game. set forceX = 200f
+
+15. change ball weight
+
+16. add RandomMagicStick to game
+
+17. add BallPooling.cs to gameController 
+	set isForceApplied true
+	set upOrDown = -1
+required: bouncy boundry walls 
+ * (set bounciness level of walls)
+ * minForce and maxFroce (default 500 to 700)
+ * remove down edge (collider) from boundries
+ * force in x direction
+
+18. add eater (set direction 1 for +ve and -1 for -ve)
+
+19. add moving Obstacle in game (attach MoveObstacle.cs with obstacle also set direction)
+
+20. add bubble script 
+
+21. change ball weight
+
+22. Add Fogg object in the game
+
+23. 
+
+24. 
+
+25. 
+
+26. Add fillingBox to game (CheckBoxFilling.cs attached)
+
+27. Attach GunBallThrower.cs with gameController remove BallPooling
+	be careful of sidewalls edges (Collider)
+
+28. add basket (set direction 1 for +ve and -1 for -ve)
+	<<Risk>> unable to sove edge issue for now on make it non-movable
+
+29. add ColorChanger in game (add ballColorChanger script with ColorChanger)
+
+30. add CircularThrower in game (attach ChakraThrower script with CircularThrower)
+
+
+Design :
+1. Hat
+2. Balls (All 5)
+3. Basket
+4. Blower
+5. Bubble
+6. Circular Thrower
+7. Color Changer
+8. Eater
+9. Filling Box
+10. Fogg
+11. Gun
+12. Magic Stick
+13. Magnet
+14. RandomMagicStick
+15. SpinObstacle
+
+
+TODO : 
+1. change from gameController or levelmanager script
+
+2. make bounciness to normal valued after one bounce
+
+3. Basket and ball issue
+
+4. bubble script
+
+5. add eater and basket pooling
+
+6. Add bomb
