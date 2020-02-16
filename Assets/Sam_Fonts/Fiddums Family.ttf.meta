@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 95394df7cf4b1e54c9fc54d9676ba4cd
+timeCreated: 1581438423
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fiddums Family
+  fontNames:
+  - Fiddums Family
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
