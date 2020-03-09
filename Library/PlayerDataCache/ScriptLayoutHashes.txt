@@ -1,8 +1,9 @@
 Android
 PlayerPath?
-C:/Users/hp/Documents/Magic Hat/Builds/BGM1.apk
+C:/Users/hp/Documents/Magic Hat/Builds/BGM5.apk
 SceneListBegin?
 Assets/_Scene/Menu.unity
+Assets/_Scene/LevelBG.unity
 Assets/_Scene/main.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CatchingBallCollision
@@ -53,6 +54,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MenuManager
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -183,3 +185,4 @@ c6007dc7148a55ed2f2ab56c7150595b Assembly-CSharp.dll:.BlowerController
 d2a1b4a5745c5c60a33363a3ba3535cf Assembly-CSharp.dll:.HT_Explode
 b8fcb92e80268de31a4a3ef7e4604816 Assembly-CSharp.dll:.BallColorChanger
 26d85d6cc37c5b47d2d16a0e273e5c4b Assembly-CSharp.dll:.HT_GameController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LevelManager

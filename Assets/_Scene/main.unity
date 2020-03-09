@@ -1293,6 +1293,12 @@ Prefab:
       propertyPath: m_Points.Array.data[2].y
       value: -0.2237637
       objectReference: {fileID: 0}
+    - target: {fileID: 212645647143169596, guid: 846b6b06c1241a344a43352d5d5b7450,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b2080580bb3053f4f98627b28d26e314,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 846b6b06c1241a344a43352d5d5b7450, type: 2}
   m_IsPrefabParent: 0
