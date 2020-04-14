@@ -16,13 +16,20 @@ public class BlackHoleController : MonoBehaviour {
 
 	private Vector3 targetWidth;
 
+	private Animator anim;
+
 	[SerializeField]
 	private float initialWaitTime = 10;
+
+	[SerializeField]
+	private Sprite[] ballSprite;
+
 	// Use this for initialization
 	void Start () 
 	{
 		if (cam == null)
 			cam = Camera.main;
+		anim = GetComponentInChildren<Animator> ();
 		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
 		targetWidth = cam.ScreenToWorldPoint (upperCorner);
 

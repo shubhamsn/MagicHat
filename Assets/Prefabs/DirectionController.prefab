@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212592702809964356}
   - component: {fileID: 58331240076486428}
   - component: {fileID: 114817792373660830}
+  - component: {fileID: 95500335956796720}
   m_Layer: 0
   m_Name: DirectionController
   m_TagString: Untagged
@@ -57,6 +58,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.19039166
+--- !u!95 &95500335956796720
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049367214335362}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ccb29e601d94a54cb15b6cb9a246a4e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114817792373660830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20e6e0a2189e6845a281f6ea2be4cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selfDestroy: 0
 --- !u!212 &212592702809964356
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -79,13 +79,16 @@
      <Compile Include="Assets\Scripts\GunBallThrower.cs" />
      <Compile Include="Assets\Scripts\HatColorChanger.cs" />
      <Compile Include="Assets\Scripts\HatController.cs" />
+     <Compile Include="Assets\Scripts\HatGlow.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\LevelSelecter.cs" />
+     <Compile Include="Assets\Scripts\LolipopStick.cs" />
      <Compile Include="Assets\Scripts\MagicSticks.cs" />
      <Compile Include="Assets\Scripts\MagnetController.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\MoveObstacle.cs" />
      <Compile Include="Assets\Scripts\ObstaclePooling.cs" />
+     <Compile Include="Assets\Scripts\PumpkinController.cs" />
      <Compile Include="Assets\Scripts\RadiateBall.cs" />
      <Compile Include="Assets\Scripts\RandomMagicSticks.cs" />
      <Compile Include="Assets\Scripts\RotationObs.cs" />

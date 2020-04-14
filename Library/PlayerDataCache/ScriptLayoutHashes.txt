@@ -6,7 +6,7 @@ Assets/_Scene/Menu.unity
 Assets/_Scene/LevelBG.unity
 Assets/_Scene/main.unity
 SceneListEnd?
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CatchingBallCollision
+33f0f48bdef9186f8b21a37359c9226b Assembly-CSharp.dll:.CatchingBallCollision
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 4b12dd839b2293f8457cd67cc3610b85 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -134,8 +134,10 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 42526854986fb5dfa600098af4c21d03 Assembly-CSharp.dll:.MoveObstacle
 d2d478da078b80e4e816d849e9cce991 Assembly-CSharp.dll:.HT_SetParticleSortingLayer
 294575a7a46f1c0ccbf33475596acfde Assembly-CSharp.dll:.GameController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HatGlow
+7b2fce72f78915f0da36b080cb6c8a0c Assembly-CSharp.dll:.LolipopStick
 3a7c98da7d3e87c58a0792d5484f6230 Assembly-CSharp.dll:.MagnetController
-0662b78989b018a13ff2f2775ffffde5 Assembly-CSharp.dll:.GunBallThrower
+2507b4491c9b70bc2edd79b62696a02c Assembly-CSharp.dll:.GunBallThrower
 fc0149cc572efd8a4aaff384513f2798 Assembly-CSharp.dll:.ChakraThrower
 7a9392fcd43189d25ddf20fdbfccdd8e Assembly-CSharp.dll:.BubbleController
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -168,6 +170,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BasketController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LevelManager
 400e06ea2ee3c716cf3911b165a7104a Assembly-CSharp.dll:.ObstaclePooling
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -175,7 +178,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-1d5d4c79d7e5db72be8d6674bb954828 Assembly-CSharp.dll:.BlackHoleController
+372d5ac1a574387474e626c6c3c98709 Assembly-CSharp.dll:.BlackHoleController
 7d77b9c8f9681ba2a8f28fac4ab69dda Assembly-CSharp.dll:.HT_Score
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CatchingBombCollision
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HT_Restart
@@ -183,6 +186,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 c6007dc7148a55ed2f2ab56c7150595b Assembly-CSharp.dll:.BlowerController
 4d13c1bad4cfb2154d1e0762e9f53113 Assembly-CSharp.dll:.HatController
 d2a1b4a5745c5c60a33363a3ba3535cf Assembly-CSharp.dll:.HT_Explode
-b8fcb92e80268de31a4a3ef7e4604816 Assembly-CSharp.dll:.BallColorChanger
+bc8dd34307482623d21d4729b0fdbf36 Assembly-CSharp.dll:.BallColorChanger
 26d85d6cc37c5b47d2d16a0e273e5c4b Assembly-CSharp.dll:.HT_GameController
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LevelManager

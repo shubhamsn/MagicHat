@@ -28,6 +28,10 @@ public class GunBallThrower : MonoBehaviour {
 	[SerializeField]
 	private float EndWaitTime = 2f;
 
+	private AudioSource audioSource;
+	[SerializeField]
+	private AudioClip ShotSound;
+
 	private int leftOrRight = 1;
 	private float ReqGunWidth;
 
@@ -60,6 +64,8 @@ public class GunBallThrower : MonoBehaviour {
 
 			instateBall = Instantiate (ball, spawnPosition, spawnRotation) as GameObject;
 			instateBall.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(leftOrRight * minForceX, leftOrRight * maxForceX),0f));
+
+			AudioSource.PlayClipAtPoint (ShotSound, transform.position);
 			yield return new WaitForSeconds (Random.Range (StartWaitTime, EndWaitTime));
 		}
 		yield return new WaitForSeconds (2.0f);
