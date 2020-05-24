@@ -1,43 +1,73 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
+using TMPro;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
 	public Camera cam;
-	public GameObject[] balls;
-
-	/* decide level
+	
+    /* decide level
 	 *	LevelType 1 : number of different colored balls needed to be caught
 	 *	LevelType 2 : number of balls needed to be caught
 	 *	LevelType 3 : score must be on target level
+     *	LevelType 4 : time
 	 **/
-	[SerializeField]
-	private int initLevel = 1;		
-	[SerializeField]
+    [SerializeField]
+    [Tooltip("Level number for each level (set it manually)")]
+    private int LevelNumber = 0;
+
+    [SerializeField]
+    [Tooltip("Type of levels")]
+	private int initLevel = 1;
+
+    public GameObject[] balls;
+
+    [SerializeField]
 	private Text scoreText;
 
 	[SerializeField]
-	private int[] colorCount = new int[4];
+    [Tooltip("For level type 1: set numbers for each ball should catch to complete level\n0: Blue\n1: Green\n2: Red\n3: Yellow")]
+    private int[] colorCount = new int[4];
 
 	[SerializeField]
-	private int collidedBallCount;
+    [Tooltip("For level type 2: set how many balls collect to complete the level")]
+    private int targetCollidedBallCount;
 
 	[SerializeField]
-	private int targetScore;
+    [Tooltip("For level Type 3: set target score")]
+    private int targetScore;
 
 	[SerializeField]
-	private Slider scoreMeter;
+    [Tooltip("scoremeter bottom right corner")]
+    private Slider scoreMeter;
 	[SerializeField]
-	private int ballValueScoreMeter = 1;	//ball values for point meter for scores and stars
+    [Tooltip("Value of each ball for point meter for score and stars")]
+    private int ballValueScoreMeter = 1;	//ball values for point meter for scores and stars
 	[SerializeField]
-	private int[] starValues;
+    [Tooltip("Number of balls catch to collect each star")]
+    private int[] starValues;
 	private int starCount = 0;
 	[SerializeField]
-	private int maxValueScoreMeter = 20;
+    [Tooltip("star object (image) on score meter")]
+    private GameObject StarIndicator1;
+	[SerializeField]
+    [Tooltip("star object (image) on score meter")]
+    private GameObject StarIndicator2;
+	[SerializeField]
+    [Tooltip("star object (image) on score meter")]
+    private GameObject StarIndicator3;
+	[SerializeField]
+    [Tooltip("set of star images (after achieved (colored))")]
+    private Sprite[] StarIndicatorOnAchieve;
+	[SerializeField]
+    [Tooltip("maximum value of score meter (should be ballValueScoreMeter * number of balls)(Recheck)")]
+    private int maxValueScoreMeter = 20;
 
-	public bool gameOver;
+    public bool gameOver;
 	private int score;
 
 	public GameObject gameOverText;
@@ -48,6 +78,17 @@ public class GameController : MonoBehaviour {
 
 	private float maxWidth;
 	private bool counting;
+
+	[SerializeField]
+	private GameObject PauseMenu;
+
+    [SerializeField]
+    private TextMeshProUGUI LevelText;
+
+    [SerializeField]
+	private GameObject PauseButton;
+
+	public bool isPause;
 
 	public static GameController instance;
 
@@ -65,6 +106,16 @@ public class GameController : MonoBehaviour {
 		if (cam == null) {
 			cam = Camera.main;
 		}
+
+        LevelText.SetText("Level {0}", LevelNumber);
+
+		isPause = false;
+		float xValue = ((160/maxValueScoreMeter) * starValues[0]) - 80;
+		StarIndicator1.transform.localPosition = new Vector2(xValue, 40f);
+
+		xValue = ((160/maxValueScoreMeter) * starValues[1]) - 80;
+		StarIndicator2.transform.localPosition = new Vector2(xValue, 40f);
+
 		InitializeLevel ();
 		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
 		Vector3 targetWidth = cam.ScreenToWorldPoint (upperCorner);
@@ -76,6 +127,17 @@ public class GameController : MonoBehaviour {
 		scoreMeter.value = 0;
 		scoreMeter.maxValue = maxValueScoreMeter;
 	}
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            if (gameOver)
+                EndGame();
+            else
+                PauseGame();
+        }
+    }
 
 	/*void FixedUpdate () {
 		if (!gameOver) 
@@ -118,6 +180,19 @@ public class GameController : MonoBehaviour {
 		score += 50;
 		scoreText.text = "Score:" + score;
 		scoreMeter.value += ballValueScoreMeter;
+
+		//Update StarIndicator
+		if(scoreMeter.value >= starValues[2])
+			//3 stars
+			StarIndicator3.GetComponent<Image>().sprite = StarIndicatorOnAchieve[2];	
+		else if(scoreMeter.value >= starValues[1])
+			//2 stars
+			StarIndicator2.GetComponent<Image>().sprite = StarIndicatorOnAchieve[1];
+		else if(scoreMeter.value >= starValues[0])
+			//1 star
+			StarIndicator1.GetComponent<Image>().sprite = StarIndicatorOnAchieve[0];
+		
+		
 		//Debug.Log ("Screen meter " + scoreMeter.value);
 		switch (initLevel) {
 		case(1):
@@ -137,10 +212,10 @@ public class GameController : MonoBehaviour {
 			}
 			break;
 		case(2):
-			if (collidedBallCount > 0) {
-				collidedBallCount--;
+			if (targetCollidedBallCount > 0) {
+				targetCollidedBallCount--;
 			}
-			if (collidedBallCount == 0) {
+			if (targetCollidedBallCount == 0) {
 				//Level Complete
 				gameOverUpdates ();
 			}
@@ -174,5 +249,87 @@ public class GameController : MonoBehaviour {
 			starCount = 0;
 
 		Debug.Log ("stars count " + starCount);
+
+        //Set level status (level metadata)
+        int newHighScore = score;
+
+        LevelMetaData levelMetaData = LevelManager.LevelManagerInstance.GetData(LevelNumber);
+
+        if (levelMetaData != null)
+        {
+            newHighScore = (score > levelMetaData.HighScore) ? score : levelMetaData.HighScore;
+            Debug.Log("old Highscore " + levelMetaData.HighScore);
+            
+        }
+        LevelMetaData levelMetaDataNew = new LevelMetaData()
+        {
+            HighScore = newHighScore,
+            StarCount = starCount,
+            BestTime = 0  //TODO
+        };
+        Debug.Log("new Highscore " + levelMetaDataNew.HighScore);
+
+        LevelManager.LevelManagerInstance.SaveData(LevelNumber, levelMetaDataNew);
+        Debug.Log("data saved");
+        SceneManager.LoadScene("LevelBG");
+    }
+
+	#region Buttons
+    //Do not write any other code in PauseGame(), write in PauseGameCoroutine()
+    public void PauseGame()
+    {
+        StartCoroutine(PauseGameCoroutine());
+    }
+
+	public IEnumerator PauseGameCoroutine()
+	{
+        PauseButton.SetActive(false);
+        PauseMenu.SetActive(true);
+        isPause = true;
+
+        yield return new WaitForSeconds(0.75f);
+        Time.timeScale = 0;
 	}
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+	public void ContinueGame()
+	{
+		StartCoroutine(ContinueGameCoroutine());
+	}
+
+    private IEnumerator ContinueGameCoroutine()
+    {
+        isPause = false;
+        try
+        {
+            Animator PopUpAnimator = PauseMenu.GetComponent<Animator>();
+
+            if(PopUpAnimator != null)
+            {
+                PopUpAnimator.SetTrigger("EndPopUp");
+            }
+        }
+        catch(Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+        
+        yield return new WaitForSeconds(0.75f);
+        PauseButton.SetActive(true);
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void EndGame()
+	{
+		Time.timeScale = 1;
+		SceneManager.LoadScene ("Menu");
+	}
+
+	#endregion
 }

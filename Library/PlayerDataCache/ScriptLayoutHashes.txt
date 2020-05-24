@@ -133,10 +133,11 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DestroyOnContact
 42526854986fb5dfa600098af4c21d03 Assembly-CSharp.dll:.MoveObstacle
 d2d478da078b80e4e816d849e9cce991 Assembly-CSharp.dll:.HT_SetParticleSortingLayer
-294575a7a46f1c0ccbf33475596acfde Assembly-CSharp.dll:.GameController
+388b09fe0ba3c5459fa540c39084b057 Assembly-CSharp.dll:.GameController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HatGlow
 7b2fce72f78915f0da36b080cb6c8a0c Assembly-CSharp.dll:.LolipopStick
 3a7c98da7d3e87c58a0792d5484f6230 Assembly-CSharp.dll:.MagnetController
+fcda32b228965dd703f66ec112a4a045 Assembly-CSharp.dll:.PumpkinController
 2507b4491c9b70bc2edd79b62696a02c Assembly-CSharp.dll:.GunBallThrower
 fc0149cc572efd8a4aaff384513f2798 Assembly-CSharp.dll:.ChakraThrower
 7a9392fcd43189d25ddf20fdbfccdd8e Assembly-CSharp.dll:.BubbleController
@@ -188,3 +189,4 @@ c6007dc7148a55ed2f2ab56c7150595b Assembly-CSharp.dll:.BlowerController
 d2a1b4a5745c5c60a33363a3ba3535cf Assembly-CSharp.dll:.HT_Explode
 bc8dd34307482623d21d4729b0fdbf36 Assembly-CSharp.dll:.BallColorChanger
 26d85d6cc37c5b47d2d16a0e273e5c4b Assembly-CSharp.dll:.HT_GameController
+b61dcb5542378ecdb1b23765ea33d75f Assembly-CSharp.dll:DigitalRuby.LightningBolt.LightningBoltScript

@@ -1,22 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1523947489263918}
-  m_IsPrefabParent: 1
 --- !u!1 &1523947489263918
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4005999655987770}
   - component: {fileID: 114314748458009998}
@@ -34,9 +24,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4005999655987770
 Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523947489263918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.1, z: 0}
@@ -45,45 +36,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114093011544684998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1523947489263918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9df322526ed9464ab1bd1505bc896c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114134331858439952
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1523947489263918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b18a41739af294faa2659907522511, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  balls:
-  - {fileID: 1102807836300688, guid: 26fea167c43d2a14f8c18147f31a070a, type: 2}
-  - {fileID: 1688328165431312, guid: 5c6fe6cdccd1e5b4387be34fe99d9c2a, type: 2}
-  - {fileID: 1662140931669382, guid: dc408aeaa888fb248b0bfa6f65afc55a, type: 2}
-  - {fileID: 1223780426783864, guid: 7e4cfb779f0022448bf15780118b8f22, type: 2}
-  isForceApplied: 0
-  upOrDown: 1
-  minForce: 500
-  maxForce: 700
-  IntialWaitTime: 2
-  StartWaitTime: 1
-  EndWaitTime: 2
 --- !u!114 &114314748458009998
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523947489263918}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -91,29 +49,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  balls:
-  - {fileID: 1102807836300688, guid: 26fea167c43d2a14f8c18147f31a070a, type: 2}
-  - {fileID: 1688328165431312, guid: 5c6fe6cdccd1e5b4387be34fe99d9c2a, type: 2}
-  - {fileID: 1662140931669382, guid: dc408aeaa888fb248b0bfa6f65afc55a, type: 2}
-  - {fileID: 1223780426783864, guid: 7e4cfb779f0022448bf15780118b8f22, type: 2}
+  LevelNumber: 0
   initLevel: 2
+  balls:
+  - {fileID: 1102807836300688, guid: 26fea167c43d2a14f8c18147f31a070a, type: 3}
+  - {fileID: 1688328165431312, guid: 5c6fe6cdccd1e5b4387be34fe99d9c2a, type: 3}
+  - {fileID: 1662140931669382, guid: dc408aeaa888fb248b0bfa6f65afc55a, type: 3}
+  - {fileID: 1223780426783864, guid: 7e4cfb779f0022448bf15780118b8f22, type: 3}
   scoreText: {fileID: 114310684373497738, guid: a6fd45513a44e444694d4a080daa34a2,
-    type: 2}
+    type: 3}
   colorCount: 00000000000000000200000002000000
-  collidedBallCount: 100
+  targetCollidedBallCount: 0
   targetScore: 0
+  scoreMeter: {fileID: 0}
+  ballValueScoreMeter: 1
+  starValues: 
+  StarIndicator1: {fileID: 0}
+  StarIndicator2: {fileID: 0}
+  StarIndicator3: {fileID: 0}
+  StarIndicatorOnAchieve:
+  - {fileID: 21300000, guid: 68cea3263d9549249a70f5f6b776bda5, type: 3}
+  - {fileID: 21300000, guid: 148e3789d8cf9e346b98b3074682c827, type: 3}
+  - {fileID: 21300000, guid: b4de5b98452ac2c43a8a3a891bbaadf9, type: 3}
+  maxValueScoreMeter: 20
   gameOver: 0
   gameOverText: {fileID: 0}
   restartButton: {fileID: 0}
   splashScreen: {fileID: 0}
   startButton: {fileID: 0}
   hatController: {fileID: 114575602793795380, guid: 846b6b06c1241a344a43352d5d5b7450,
-    type: 2}
+    type: 3}
+  PauseMenu: {fileID: 0}
+  PauseButton: {fileID: 0}
+  isPause: 0
+--- !u!114 &114093011544684998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523947489263918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9df322526ed9464ab1bd1505bc896c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114316822479007188
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523947489263918}
   m_Enabled: 0
   m_EditorHideFlags: 0
@@ -122,24 +108,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLeft: 200
   timerText: {fileID: 0}
---- !u!114 &114408227506210688
+--- !u!114 &114134331858439952
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523947489263918}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ec6b5432cef804429d776459e967566, type: 3}
+  m_Script: {fileID: 11500000, guid: e9b18a41739af294faa2659907522511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1865840678746784, guid: ea35b08fba58d8142a5b835658c598f2, type: 2}
-  initialWaitTime: 3
+  balls:
+  - {fileID: 1102807836300688, guid: 26fea167c43d2a14f8c18147f31a070a, type: 3}
+  - {fileID: 1688328165431312, guid: 5c6fe6cdccd1e5b4387be34fe99d9c2a, type: 3}
+  - {fileID: 1662140931669382, guid: dc408aeaa888fb248b0bfa6f65afc55a, type: 3}
+  - {fileID: 1223780426783864, guid: 7e4cfb779f0022448bf15780118b8f22, type: 3}
+  isForceApplied: 0
+  upOrDown: 1
+  minForce: 500
+  maxForce: 700
+  IntialWaitTime: 2
+  StartWaitTime: 1
+  EndWaitTime: 2
 --- !u!114 &114875544323983686
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523947489263918}
   m_Enabled: 0
   m_EditorHideFlags: 0
@@ -149,10 +147,25 @@ MonoBehaviour:
   Guns:
   - {fileID: 0}
   balls:
-  - {fileID: 1102807836300688, guid: 26fea167c43d2a14f8c18147f31a070a, type: 2}
-  - {fileID: 1688328165431312, guid: 5c6fe6cdccd1e5b4387be34fe99d9c2a, type: 2}
+  - {fileID: 1102807836300688, guid: 26fea167c43d2a14f8c18147f31a070a, type: 3}
+  - {fileID: 1688328165431312, guid: 5c6fe6cdccd1e5b4387be34fe99d9c2a, type: 3}
   minForceX: 30
   maxForceX: 200
   IntialWaitTime: 2
   StartWaitTime: 1
   EndWaitTime: 2
+  ShotSound: {fileID: 0}
+--- !u!114 &114408227506210688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523947489263918}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec6b5432cef804429d776459e967566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubble: {fileID: 1865840678746784, guid: ea35b08fba58d8142a5b835658c598f2, type: 3}
+  initialWaitTime: 3
